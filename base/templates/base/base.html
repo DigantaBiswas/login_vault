@@ -11,7 +11,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
             <meta name="description" content=""/>
             <meta name="author" content=""/>
-            <title>Landing Page - Start Bootstrap Theme</title>
+            <title>{{ title }}</title>
             <!-- Favicon-->
             <link rel="icon" type="image/x-icon" href='{% static "assets/favicon.ico" %}'/>
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
@@ -35,7 +35,7 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
 
-                <a class="navbar-brand" href="#!">Login Vault</a>
+                <a class="navbar-brand" href="{% url 'home-view' %}">Login Vault</a>
 
 
                 <div class="d-flex justify-content-center ">
