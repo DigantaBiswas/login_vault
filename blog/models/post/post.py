@@ -3,6 +3,7 @@ from django.utils.text import slugify
 
 from base.models import BaseAbstractModel
 from blog.models import Tag
+from blog.utills.unique_slug_generator import unique_slugify
 
 
 class Post(BaseAbstractModel):
@@ -10,6 +11,7 @@ class Post(BaseAbstractModel):
     detail = models.TextField()
     slug = models.SlugField(null=False, unique=True)
     login_url = models.URLField()
+    image_url = models.URLField(blank=True, null=True)
     tag = models.ManyToManyField(Tag)
 
     class Meta:
@@ -19,6 +21,7 @@ class Post(BaseAbstractModel):
         return self.title
 
     def save(self, *args, **kwargs):
-        self.slug = self.slug or slugify(self.title)
+        slug_str = self.title
+        unique_slugify(self, slug_str)
         super().save(*args, **kwargs)
 
