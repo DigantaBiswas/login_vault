@@ -6,11 +6,11 @@ from blog.models import Tag, Post
 
 class PostListByTag(View):
 
-    def get(self, request, name):
+    def get(self, request, slug):
         """ title is used to show in page html as html title"""
-        title = name
+        title = slug
 
-        tag = Tag.objects.filter(name=name).last()
+        tag = Tag.objects.filter(slug=slug).last()
         posts = Post.objects.filter(tag__in=[tag])
 
         context = {

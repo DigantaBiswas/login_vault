@@ -6,5 +6,5 @@ from blog.views.post_list_by_tag_view import PostListByTag
 
 urlpatterns = [
     path('create/', PostCreateView.as_view(), name='post-create'),
-    path('post-list/<name>/', PostListByTag.as_view(), name='post-list-by-tag'),
+    path('post-list/<slug>/', PostListByTag.as_view(), name='post-list-by-tag'),
 ]
