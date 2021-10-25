@@ -25,3 +25,5 @@ class Post(BaseAbstractModel):
         unique_slugify(self, slug_str)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return self.slug
