@@ -7,7 +7,7 @@ from blog.models import Tag, Post
 
 class HomeView(View):
     def get(self, request):
-        tags = Tag.objects.filter()[:50]
+        tags = Tag.objects.filter().order_by('?')[:50]
         context = {
             'tags': tags,
             'title': "Home"
