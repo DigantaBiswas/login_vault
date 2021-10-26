@@ -18,3 +18,6 @@ class Tag(BaseAbstractModel):
         slug_str = self.name
         unique_slugify(self, slug_str)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return "/post/post-list/{}".format(self.slug)
