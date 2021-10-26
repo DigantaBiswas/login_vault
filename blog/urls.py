@@ -13,6 +13,6 @@ sitemaps = {
 urlpatterns = [
     path('create/', PostCreateView.as_view(), name='post-create'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
-         name='django.contrib.sitemaps.views.sitemap')
+         name='django.contrib.sitemaps.views.sitemap'),
     path('post-list/<slug>/', PostListByTag.as_view(), name='post-list-by-tag'),
 ]
